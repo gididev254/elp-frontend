@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/*
+ * Embuni ELC — Visual Identity System
+ * Inspired by the official Equity Leaders Program color scheme.
+ *
+ * PALETTE (extracted from the production Vercel site):
+ * - Primary: Deep Maroon #8B0000 (rgb 139, 0, 0) — the dominant brand color
+ * - Primary Gradient: #8B0000 → #A52A2A (maroon to brown-red) — used for hero sections and branded panels
+ * - Accent: Warm Gold #F7C744 (rgb 247, 199, 68) — used sparingly for highlights and distinction
+ * - Headings: Near-black #2B2B2B (rgb 43, 43, 43) — strong, readable
+ * - Body text: Medium gray #525252 (rgb 82, 82, 82)
+ * - Muted text: Light gray #A3A3A3 (rgb 163, 163, 163)
+ * - Borders: Light gray #E5E7EB (rgb 229, 231, 235)
+ * - Background: Pure white #FFFFFF
+ * - Footer: Dark #2B2B2B
+ * - Sidebar: Deep maroon gradient (matching the hero)
+ *
+ * The result: warm, authoritative maroon with gold accents — distinctly ELC.
+ */
+
+:root {
+  --radius: 0.625rem;
+
+  /* Base surfaces — white background, maroon only on hero/branding sections */
+  --background: #FFFFFF;                         /* white page background */
+  --foreground: #2B2B2B;                         /* near-black text */
+  --card: #FFFFFF;                               /* white cards */
+  --card-foreground: #2B2B2B;
+  --popover: #FFFFFF;
+  --popover-foreground: #2B2B2B;
+
+  /* Primary: Deep Maroon — for CTAs, hero sections, active states */
+  --primary: #8B0000;                            /* deep maroon */
+  --primary-foreground: #FFFFFF;                /* white on maroon */
+
+  /* Secondary: light maroon tint */
+  --secondary: #FDF2F2;                         /* very light maroon tint */
+  --secondary-foreground: #8B0000;               /* maroon text */
+
+  /* Muted — neutral grays */
+  --muted: #F5F5F5;                              /* light gray bg */
+  --muted-foreground: #525252;                   /* medium gray text */
+
+  /* Accent: Warm Gold — used SPARINGLY */
+  --accent: #F7C744;                             /* warm gold */
+  --accent-foreground: #2B2B2B;                  /* dark text on gold */
+
+  --destructive: #DC2626;                        /* standard red for errors */
+  --border: #E5E7EB;                             /* light gray border */
+  --input: #E5E7EB;
+  --ring: #8B0000;                               /* maroon focus ring */
+
+  /* Charts — maroon + gold + grays */
+  --chart-1: #8B0000;                            /* maroon */
+  --chart-2: #A52A2A;                            /* brown-red */
+  --chart-3: #F7C744;                            /* gold */
+  --chart-4: #6B0000;                            /* darker maroon */
+  --chart-5: #D4A0A0;                            /* light maroon tint */
+
+  /* Sidebar: Deep Maroon — matches hero, authoritative */
+  --sidebar: #8B0000;                            /* deep maroon sidebar */
+  --sidebar-foreground: #FFFFFF;                 /* white text on maroon */
+  --sidebar-primary: #FFFFFF;                    /* white active item */
+  --sidebar-primary-foreground: #8B0000;         /* maroon text on white active bg */
+  --sidebar-accent: #A52A2A;                     /* brown-red hover */
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #6B0000;                     /* darker maroon border */
+  --sidebar-ring: #F7C744;                       /* gold focus ring */
+}
+
+.dark {
+  --background: #1A1A1A;
+  --foreground: #FFFFFF;
+  --card: #2B2B2B;
+  --card-foreground: #FFFFFF;
+  --popover: #2B2B2B;
+  --popover-foreground: #FFFFFF;
+  --primary: #A52A2A;                            /* lighter maroon in dark mode */
+  --primary-foreground: #FFFFFF;
+  --secondary: #3A1A1A;
+  --secondary-foreground: #F5E6E6;
+  --muted: #2B2B2B;
+  --muted-foreground: #A3A3A3;
+  --accent: #F7C744;
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF4444;
+  --border: #404040;
+  --input: #404040;
+  --ring: #A52A2A;
+  --chart-1: #A52A2A;
+  --chart-2: #8B0000;
+  --chart-3: #F7C744;
+  --chart-4: #C57575;
+  --chart-5: #6B0000;
+  --sidebar: #6B0000;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #F7C744;
+  --sidebar-primary-foreground: #6B0000;
+  --sidebar-accent: #8B0000;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #4B0000;
+  --sidebar-ring: #F7C744;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    border-radius: 4px;
+    opacity: 0.4;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Subtle grid pattern for hero backgrounds */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  /* Brand gradient — maroon to brown-red, matching the Vercel site hero */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+  }
+  .bg-brand-gradient-diagonal {
+    background: linear-gradient(to right bottom, #8B0000, #A52A2A, #6B0000);
+  }
+  /* Radial glow — maroon */
+  .bg-radial-brand {
+    background: radial-gradient(ellipse at top, rgba(139, 0, 0, 0.08), transparent 70%);
+  }
+  /* Gold accent text */
+  .text-gold {
+    color: #F7C744;
+  }
+}
+
+/* Alternating content section background — neutral very light gray (matches Vercel #FAFAFA) */
+@layer utilities {
+  .bg-section-alt {
+    background-color: #FAFAFA;
+  }
+}
