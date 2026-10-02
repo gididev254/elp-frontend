@@ -34,6 +34,7 @@ export const STATIC_ASSET_PREFIXES: readonly string[] = [
   "/favicon",
   "/images",
   "/documents",
+  "/logos",
 ] as const;
 
 // True if the pathname is on the public allowlist (exact match or nested under
