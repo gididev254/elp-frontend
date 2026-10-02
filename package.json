@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--max-old-space-size=1536' next dev -p 3000 2>&1 | tee ../dev.log",
-    "build": "prisma generate --schema=prisma/schema.prisma && next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
+    "build": "bunx prisma generate --schema=prisma/schema.prisma && next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
     "start": "NODE_ENV=production node .next/standalone/server.js",
     "lint": "eslint .",
     "test": "bun test",
-    "db:push": "prisma db push --accept-data-loss --schema=prisma/schema.prisma",
-    "db:generate": "prisma generate --schema=prisma/schema.prisma",
-    "db:migrate": "prisma migrate dev --schema=prisma/schema.prisma",
+    "db:push": "bunx prisma db push --accept-data-loss --schema=prisma/schema.prisma",
+    "db:generate": "bunx prisma generate --schema=prisma/schema.prisma",
+    "db:migrate": "bunx prisma migrate dev --schema=prisma/schema.prisma",
     "db:seed": "bun run prisma/seed.ts"
   },
   "prisma": {
@@ -66,7 +66,7 @@
     "next-auth": "^4.24.11",
     "next-intl": "^4.3.4",
     "next-themes": "^0.4.6",
-    "prisma": "^6.11.1",
+    "prisma": "6.11.1",
     "react": "^19.0.0",
     "react-day-picker": "^9.8.0",
     "react-dom": "^19.0.0",
