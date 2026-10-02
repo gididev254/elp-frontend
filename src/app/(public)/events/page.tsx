@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { CalendarDays, Clock, MapPin, ArrowRight, CalendarCheck } from "lucide-react";
 import { format } from "date-fns";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: "Events",
   description:

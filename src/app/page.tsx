@@ -23,6 +23,8 @@ import {
 import { format, isPast, isFuture } from "date-fns";
 import { Logo } from "@/components/layout/logo";
 
+export const dynamic = 'force-dynamic';
+
 async function getHomeData() {
   const [leadersCount, eventsUpcoming, newsRecent, programs] = await Promise.all([
     db.user.count({

@@ -7,6 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { Newspaper, ArrowRight, CalendarDays } from "lucide-react";
 import { format } from "date-fns";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: "News & Announcements",
   description:

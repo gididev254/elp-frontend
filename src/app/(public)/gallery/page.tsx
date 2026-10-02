@@ -5,6 +5,8 @@ import { db } from "@/lib/db";
 import { GalleryGrid } from "@/components/public/gallery-grid";
 import { Images } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: "Gallery",
   description:

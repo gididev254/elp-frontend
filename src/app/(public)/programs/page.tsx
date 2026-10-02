@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CalendarDays, Compass } from "lucide-react";
 import { format } from "date-fns";
 
+export const dynamic = 'force-dynamic';
+
 const CATEGORIES = [
   { key: "all", label: "All" },
   { key: "mentorship", label: "Mentorship" },

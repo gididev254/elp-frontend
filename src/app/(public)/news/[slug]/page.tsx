@@ -9,6 +9,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ArrowLeft, ArrowRight, CalendarDays, User } from "lucide-react";
 import { format } from "date-fns";
 
+export const dynamic = 'force-dynamic';
+
 type Params = { slug: string };
 
 const CATEGORY_LABELS: Record<string, string> = {
